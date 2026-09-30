@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: polymarket-5m-predictor
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: DEFAULT_SYMBOL
+        value: BTCUSDT
+      - key: DEFAULT_TIMEFRAME
+        value: 5m
